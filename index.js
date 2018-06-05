@@ -34,6 +34,8 @@ function handleMessage(message){
     chuckJoke();
   } else if(message.includes(' yomama')){
     yoMamaJoke()
+  } else if(message.includes(' random')){
+    randomJoke();
   }
 }
 
@@ -72,4 +74,15 @@ function yoMamaJoke(){
         params
       );
     })
+}
+
+
+// Tell a random joke
+function randomJoke(){
+  const rand = Math.floor(Math.random() * 2) + 1;
+  if(rand === 1){
+    chuckJoke()
+  } else if(rand === 2){
+    yoMamaJoke()
+  }
 }
